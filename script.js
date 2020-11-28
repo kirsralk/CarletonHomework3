@@ -37,12 +37,12 @@ function getPassCriteria (){
     // Criteria 5: Special Characters
     var passSpecial = confirm("Click OK to include special characters.");
 
-        // Validate: At least 1 character type selected
-        // if (!!passUpper && !!passLower && !!passLength) {
-        //     alert("Please select at least one character type to include.");
-        //     return;
-        // }
-        //     // If criteria not met, display an alert
+    // Validate: At least 1 character type selected
+    if (!passUpper && !passLower && !passNumbers && !passSpecial) {
+            alert("Please select at least one character type to include.");
+            return;
+        }
+            // If criteria not met, display an alert
 }
 
 // // Generate password using criteria
