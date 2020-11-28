@@ -1,8 +1,11 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+// Define arrays of characters for passwords
+var upperChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var lowerChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var numChars = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var specialChars = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "."];
 
 
-// // Prompt user for password criteria
+// Prompt user for password criteria
 function getPassCriteria (){
 
     // Criteria 1: Length of Password
@@ -39,10 +42,10 @@ function getPassCriteria (){
 
     // Validate: At least 1 character type selected
     if (!passUpper && !passLower && !passNumbers && !passSpecial) {
+            // If criteria not met, display an alert
             alert("Please select at least one character type to include.");
             return;
         }
-            // If criteria not met, display an alert
 }
 
 // // Generate password using criteria
@@ -59,6 +62,9 @@ function writePassword() {
     // passwordText.value = password;
     // alert("test test");
 }
+
+// Point to Generate Button in DOM
+var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
