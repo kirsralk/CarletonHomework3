@@ -46,6 +46,18 @@ function getPassCriteria (){
             alert("Please select at least one character type to include.");
             return;
         }
+
+
+// Store user input in an object
+var passCriteria = {
+    legnth: passLength,
+    uppercaseChars: passUpper,
+    lowercaseChars: passLower,
+    numberChars: passNumbers,
+    specialChars: passSpecial
+};
+
+    return passCriteria;
 }
 
 // // Generate password using criteria
