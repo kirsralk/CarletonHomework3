@@ -6,21 +6,38 @@ var generateBtn = document.querySelector("#generate");
 function getPassCriteria (){
     // alert("test test 2")
 
-    // // Criteria 1: Length of Password
-    //     // Validate: Must be between 8 to 128 characters
-    var passLength = prompt("Please choose a password length between 8 to 128 characters.");
+    // Criteria 1: Length of Password
+        var passLength = parseInt(
+            prompt("Please choose a password length between 8 to 128 characters."));
+        
+        // Validate: Must be between 8 to 128 characters
+        if (isNaN(passLength) === true) {
+            alert("Password length must be a number from 8 to 128.");
+            return;
+        }
 
-    // // Criteria 2: Uppercase Charcaters
+        if (passLength < 8) {
+            alert("Password length must be between 8 to 128 characters.");
+            return;
+        }
+
+        if (passLength > 128) {
+            alert("Password length must be between 8 to 128 characters.");
+            return;
+        }
+
+    // Criteria 2: Uppercase Charcaters
     var passUpper = confirm("Click OK to include uppercase letters.");
 
-    // // Criteria 3: Lowercase Characters
+    // Criteria 3: Lowercase Characters
     var passLower = confirm("Click OK to include lowercase letters.");
 
-    // // Criteria 4: Special Characters
+    // Criteria 4: Special Characters
     var passSpecial = confirm("Click OK to include special characters.");
 
-    // // Validate: At least 1 character type selected
-    //     // If criteria not met, display an alert
+        // Validate: At least 1 character type selected
+
+            // If criteria not met, display an alert
 }
 
 // // Generate password using criteria
