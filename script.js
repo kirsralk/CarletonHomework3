@@ -79,6 +79,7 @@ function getRandom(arr) {
 function generatePassword() {
 
     var options = getPassCriteria();
+    console.log("The options variable has stored: " + options);
 
     //Store values in arrays as they are being combined
     var generatedPass = [];
@@ -88,23 +89,25 @@ function generatePassword() {
     // Parameter for length of password from prompt 1 (var passLength)
 
      // If user selected include uppercase (var passUpper === true)
-    if (passCriteria.upperCaseChars) {
+    if (options.upperCaseChars) {
         includedChars = includedChars.concat(upperChars);
         guaranteedChars.push(getRandom(upperChars));
     };
 
 
      // If user selected include lowercase (var passLower === true)
-    if (passLower === true) {};
+    if (options.passLower) {};
 
      // If user selected inlude numbesr (var passNumbers === true)
-    if (passNumbers === true) {};
+    if (options.passNumbers) {};
 
      // If user selected include special characters (var passSpecial === true)
-    if (passSpecial === true) {};
+    if (options.passSpecial) {};
+
+    generatedPass.push(includedChars);
 
     // return generatedPass;
-    return "test test";
+    return generatedPass;
     console.log(generatedPass);
 }
 
