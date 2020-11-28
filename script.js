@@ -4,7 +4,6 @@ var generateBtn = document.querySelector("#generate");
 
 // // Prompt user for password criteria
 function getPassCriteria (){
-    // alert("test test 2")
 
     // Criteria 1: Length of Password
         var passLength = parseInt(
@@ -32,12 +31,18 @@ function getPassCriteria (){
     // Criteria 3: Lowercase Characters
     var passLower = confirm("Click OK to include lowercase letters.");
 
-    // Criteria 4: Special Characters
+    // Criteria 4: Numbersa
+    var passNumbers = confirm("Click OK to include numbers.");
+
+    // Criteria 5: Special Characters
     var passSpecial = confirm("Click OK to include special characters.");
 
         // Validate: At least 1 character type selected
-
-            // If criteria not met, display an alert
+        // if (!!passUpper && !!passLower && !!passLength) {
+        //     alert("Please select at least one character type to include.");
+        //     return;
+        // }
+        //     // If criteria not met, display an alert
 }
 
 // // Generate password using criteria
