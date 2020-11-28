@@ -11,6 +11,7 @@ function getPassCriteria (){
     // Criteria 1: Length of Password
         var passLength = parseInt(
             prompt("Please choose a password length between 8 to 128 characters."));
+            console.log("Password length: " + passLength);
         
         // Validate: Must be between 8 to 128 characters
         if (isNaN(passLength) === true) {
@@ -30,15 +31,19 @@ function getPassCriteria (){
 
     // Criteria 2: Uppercase Charcaters
     var passUpper = confirm("Click OK to include uppercase letters.");
+    console.log("Uppercase: " + passUpper);
 
     // Criteria 3: Lowercase Characters
     var passLower = confirm("Click OK to include lowercase letters.");
+    console.log("Lowercase: " + passLower);
 
     // Criteria 4: Numbersa
     var passNumbers = confirm("Click OK to include numbers.");
+    console.log("Numbers: " + passNumbers);
 
     // Criteria 5: Special Characters
     var passSpecial = confirm("Click OK to include special characters.");
+    console.log("Special chars: " + passSpecial);
 
     // Validate: At least 1 character type selected
     if (!passUpper && !passLower && !passNumbers && !passSpecial) {
@@ -56,8 +61,9 @@ var passCriteria = {
     numberChars: passNumbers,
     specialChars: passSpecial
 };
+    console.log("passCriteria saved contents: " + passCriteria);
 
-    return passCriteria;
+    // return passCriteria;
 }
 
 // // Generate password using criteria
