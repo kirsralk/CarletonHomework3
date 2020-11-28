@@ -53,38 +53,64 @@ function getPassCriteria (){
         }
 
 
-// Store user input in an object
-var passCriteria = {
-    length: passLength,
-    uppercaseChars: passUpper,
-    lowercaseChars: passLower,
-    numberChars: passNumbers,
-    specialChars: passSpecial
-};
+    // Store user input in an object 
+    var passCriteria = {
+        length: passLength,
+        upperCaseChars: passUpper,
+        lowerCaseChars: passLower,
+        numberChars: passNumbers,
+        specialChars: passSpecial
+    };
     console.log("passCriteria saved contents: ", passCriteria);
 
     return passCriteria;
 }
 
-// // Generate password using criteria
+// Function for retrieving random elements from stored arrays
+function getRandom(arr) {
+    var randomIndex = Math.floor(Math.random()*arr.length);
+    var randomElement = arr[randomIndex];
+  
+    return randomElement;
+  }
+  
+
+// Generate random password using criteria - result defines var password for output
 function generatePassword() {
+
+    var options = getPassCriteria();
+
+    //Store values in arrays as they are being combined
+    var generatedPass = [];
+    var includedChars = [];
+    var guaranteedChars = [];
 
     // Parameter for length of password from prompt 1 (var passLength)
 
-     // If user selected include uppercase (var passUpper)
-
-     // If user selected include lowercase (var passLower)
-
-     // If user selected inlude numbesr (var passNumbers)
-
-     // If user selected include special characters (var passSpecial)
+     // If user selected include uppercase (var passUpper === true)
+    if (passCriteria.upperCaseChars) {
+        includedChars = includedChars.concat(upperChars);
+        guaranteedChars.push(getRandom(upperChars));
+    };
 
 
+     // If user selected include lowercase (var passLower === true)
+    if (passLower === true) {};
+
+     // If user selected inlude numbesr (var passNumbers === true)
+    if (passNumbers === true) {};
+
+     // If user selected include special characters (var passSpecial === true)
+    if (passSpecial === true) {};
+
+    // return generatedPass;
+    return "test test";
+    console.log(generatedPass);
 }
 
 // Write password to the #password input
 function writePassword() {
-    getPassCriteria();
+    // getPassCriteria();
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
 
