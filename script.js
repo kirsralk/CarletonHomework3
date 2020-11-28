@@ -55,29 +55,40 @@ function getPassCriteria (){
 
 // Store user input in an object
 var passCriteria = {
-    legnth: passLength,
+    length: passLength,
     uppercaseChars: passUpper,
     lowercaseChars: passLower,
     numberChars: passNumbers,
     specialChars: passSpecial
 };
-    console.log("passCriteria saved contents: " + passCriteria);
+    console.log("passCriteria saved contents: ", passCriteria);
 
-    // return passCriteria;
+    return passCriteria;
 }
 
 // // Generate password using criteria
-// function generatePassword() {
-//     var passCriteria = getpassCriteria();
-// }
+function generatePassword() {
+
+    // Parameter for length of password from prompt 1 (var passLength)
+
+     // If user selected include uppercase (var passUpper)
+
+     // If user selected include lowercase (var passLower)
+
+     // If user selected inlude numbesr (var passNumbers)
+
+     // If user selected include special characters (var passSpecial)
+
+
+}
 
 // Write password to the #password input
 function writePassword() {
     getPassCriteria();
-    // var password = generatePassword();
-    // var passwordText = document.querySelector("#password");
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
 
-    // passwordText.value = password;
+    passwordText.value = password;
     // alert("test test");
 }
 
