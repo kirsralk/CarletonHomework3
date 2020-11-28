@@ -96,13 +96,22 @@ function generatePassword() {
 
 
      // If user selected include lowercase (var passLower === true)
-    if (options.passLower) {};
+    if (options.lowerCaseChars) {
+        includedChars = includedChars.concat(lowerChars);
+        guaranteedChars.push(getRandom(lowerChars));
+    };
 
      // If user selected inlude numbesr (var passNumbers === true)
-    if (options.passNumbers) {};
+     if (options.numberChars) {
+        includedChars = includedChars.concat(numChars);
+        guaranteedChars.push(getRandom(numChars));
+    };
 
      // If user selected include special characters (var passSpecial === true)
-    if (options.passSpecial) {};
+     if (options.specialChars) {
+        includedChars = includedChars.concat(specialChars);
+        guaranteedChars.push(getRandom(specialChars));
+    };
 
     generatedPass.push(includedChars);
 
