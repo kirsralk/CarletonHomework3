@@ -86,26 +86,26 @@ function generatePassword() {
     var includedChars = [];
     var guaranteedChars = [];
     
-     // If user selected include uppercase (var passUpper === true)
+    // If user selected include uppercase (var passUpper === true)
     if (options.upperCaseChars) {
         includedChars = includedChars.concat(upperChars);
         guaranteedChars.push(getRandom(upperChars));
     }
 
 
-     // If user selected include lowercase (var passLower === true)
+    // If user selected include lowercase (var passLower === true)
     if (options.lowerCaseChars) {
         includedChars = includedChars.concat(lowerChars);
         guaranteedChars.push(getRandom(lowerChars));
     }
 
-     // If user selected inlude numbesr (var passNumbers === true)
+    // If user selected inlude numbesr (var passNumbers === true)
      if (options.numberChars) {
         includedChars = includedChars.concat(numChars);
         guaranteedChars.push(getRandom(numChars));
     }
 
-     // If user selected include special characters (var passSpecial === true)
+    // If user selected include special characters (var passSpecial === true)
      if (options.specialChars) {
         includedChars = includedChars.concat(specialChars);
         guaranteedChars.push(getRandom(specialChars));
@@ -136,7 +136,6 @@ function writePassword() {
     var passwordText = document.querySelector("#password");
 
     passwordText.value = password;
-    // alert("test test");
 }
 
 // Point to Generate Button in DOM
