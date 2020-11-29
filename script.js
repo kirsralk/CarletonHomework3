@@ -68,7 +68,7 @@ function getPassCriteria (){
 
 // Function for retrieving random elements from stored arrays
 function getRandom(arr) {
-    var randomIndex = Math.floor(Math.random()*arr.length);
+    var randomIndex = Math.floor(Math.random() * arr.length);
     var randomElement = arr[randomIndex];
   
     return randomElement;
@@ -79,46 +79,55 @@ function getRandom(arr) {
 function generatePassword() {
 
     var options = getPassCriteria();
-    console.log("The options variable has stored: " + options);
+    console.log("The options variable has stored: ", options);
 
     //Store values in arrays as they are being combined
     var generatedPass = [];
     var includedChars = [];
     var guaranteedChars = [];
-
-    // Parameter for length of password from prompt 1 (var passLength)
-
+    
      // If user selected include uppercase (var passUpper === true)
     if (options.upperCaseChars) {
         includedChars = includedChars.concat(upperChars);
         guaranteedChars.push(getRandom(upperChars));
-    };
+    }
 
 
      // If user selected include lowercase (var passLower === true)
     if (options.lowerCaseChars) {
         includedChars = includedChars.concat(lowerChars);
         guaranteedChars.push(getRandom(lowerChars));
-    };
+    }
 
      // If user selected inlude numbesr (var passNumbers === true)
      if (options.numberChars) {
         includedChars = includedChars.concat(numChars);
         guaranteedChars.push(getRandom(numChars));
-    };
+    }
 
      // If user selected include special characters (var passSpecial === true)
      if (options.specialChars) {
         includedChars = includedChars.concat(specialChars);
         guaranteedChars.push(getRandom(specialChars));
-    };
+    }
 
-    generatedPass.push(includedChars);
+    // Parameter for length of password from prompt 1 (var passLength)
+    
+    for (var i = 0; i < options.length; i++) {
+        var includedChars = getRandom(includedChars);
+    
+        generatedPass.push(includedChars);}
 
+    console.log("generatedPass stored: " + generatedPass);
+
+    for (var i = 0; i < guaranteedChars.length; i++) {
+        generatedPass[i] = guaranteedChars[i];
+      }
+    
     // return generatedPass;
-    return generatedPass;
-    console.log(generatedPass);
+    return generatedPass.join("");
 }
+
 
 // Write password to the #password input
 function writePassword() {
